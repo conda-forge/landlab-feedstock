@@ -7,9 +7,11 @@ package:
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
   sha256: 2b5279916b018ae08d339b8093e046d0bfc6dc9144923bfa8f2165be6f50a094
+  patches:
+    - fix-stop-iteration.patch
 
 build:
-  number: 0
+  number: 1000
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:

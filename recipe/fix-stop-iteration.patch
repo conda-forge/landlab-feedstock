@@ -1,0 +1,13 @@
+diff --git a/landlab/bmi/bmi_bridge.py b/landlab/bmi/bmi_bridge.py
+index fcf88b8d..639be4b7 100644
+--- a/landlab/bmi/bmi_bridge.py
++++ b/landlab/bmi/bmi_bridge.py
+@@ -70,7 +70,7 @@ class TimeStepper(object):
+             while self._time < self._stop:
+                 yield self._time
+                 self._time += self._step
+-        raise StopIteration()
++        return
+ 
+     @property
+     def time(self):
