@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
   sha256: 7e15f0cf1a0c749ccbebfb54e2b1bc1606cd36e1464b1cab8e30013baf4c228c
-  patches:
-    - fix-stop-iteration.patch
 
 build:
   number: 1000
