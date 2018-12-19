@@ -37,7 +37,7 @@ test:
   imports:
     - landlab
   commands:
-    - export MPLBACKEND=Agg
+    - export MPLBACKEND=Agg  # [not win]
     - pytest --pyargs landlab --doctest-modules -o doctest_optionflags="NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL ALLOW_UNICODE"
 
 about:
