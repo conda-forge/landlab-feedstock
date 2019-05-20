@@ -23,7 +23,8 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - scipy
+    - bmipy <1
+    - scipy <1.3
     - xarray
     - matplotlib
     - netcdf4
