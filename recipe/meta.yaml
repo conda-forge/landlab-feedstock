@@ -1,4 +1,4 @@
-{% set version = "1.8.0" %}
+{% set version = "1.9.0" %}
 
 package:
   name: landlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
-  sha256: ae696477b8832f94ec130c6b6eabc7645292ef443f821aee7e79b9f619d2a050
+  sha256: de3c5ecf2636297db2a5bb7401aae854e4f8b378a18e2d356ac21c1b810acfea
 
 build:
   number: 0
@@ -31,10 +31,12 @@ requirements:
     - pyyaml
     - statsmodels
     - pyshp
+    - bmipy
 
 test:
   requires:
     - pytest
+    - pytest-datadir
   imports:
     - landlab
   commands:
