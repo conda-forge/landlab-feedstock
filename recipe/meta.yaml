@@ -1,4 +1,4 @@
-{% set version = "1.9.0b4" %}
+{% set version = "2.0.0b0" %}
 
 package:
   name: landlab
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
-  sha256: 69ba9713d72518aa3d435df829b82909cdac86b83f9aa27fbfd7c44287702e79
+  sha256: b35e4de495067b1bcdfb302ec4447d1e25454ce039b306d825ad8b84a3e3c620
 
 build:
-  number: 2
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
@@ -23,8 +23,8 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - bmipy <1
-    - scipy <1.3
+    - bmipy
+    - scipy
     - xarray
     - matplotlib
     - netcdf4
