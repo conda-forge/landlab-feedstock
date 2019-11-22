@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
-  sha256: 5ac6e3bd418c60c6cd2b487aa8e9a83db06a71ff23b4c328598862f38843ce9c
+  sha256: 9a4baedb69e452bfe95ebccec2aaed47d2e91b6e8245cbea185aaf8dbb8248f6
 
 build:
-  number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  number: 1
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
@@ -19,19 +19,19 @@ requirements:
     - python
     - pip
     - cython
-    - numpy 1.11.*
+    - numpy
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - scipy
-    - xarray
-    - matplotlib
-    - netcdf4
-    - six
-    - pyyaml
-    - statsmodels
-    - pyshp
     - bmipy
+    - matplotlib-base
+    - netcdf4
+    - pyshp
+    - pyyaml
+    - scipy
+    - six
+    - statsmodels
+    - xarray
 
 test:
   requires:
