@@ -22,7 +22,7 @@ requirements:
     - cython
     - numpy
   run:
-    - python >=3
+    - python
     - {{ pin_compatible('numpy') }}
     - bmipy
     - matplotlib-base
