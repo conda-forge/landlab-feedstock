@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
-  sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  sha256: b3445603db9ebd320d8c1ca969d1113be594e64c134974c0b631b182caddab77
 
 build:
   number: 0
