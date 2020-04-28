@@ -1,4 +1,4 @@
-{% set version = "2.0.0b7" %}
+{% set version = "2.0.0" %}
 
 package:
   name: landlab
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
-  sha256: b3445603db9ebd320d8c1ca969d1113be594e64c134974c0b631b182caddab77
+  sha256: bc2dd7ccc74772d53ee0965d7e1d2732c2857d0dafe65781f55b22bc856744f3
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-  skip: True  # [py2k]
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  skip: true  # [py2k]
 
 requirements:
   build:
