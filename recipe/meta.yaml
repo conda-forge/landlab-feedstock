@@ -1,4 +1,4 @@
-{% set version = "2.2.0" %}
+{% set version = "2.3.0" %}
 
 package:
   name: landlab
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
-  sha256: 052841fe48efd5763cdc94d1902782c2fdb99e9315bcac392a8688eb764c0e39
+  sha256: 7f2ef5adcd720e5d40a602588cc053a819b503ac325d692ed6214a7574e86798
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [py2k]
 
@@ -30,7 +30,6 @@ requirements:
     - pyshp
     - pyyaml
     - scipy
-    - six
     - statsmodels
     - xarray
 
