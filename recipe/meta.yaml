@@ -26,9 +26,9 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - bmipy
     - matplotlib-base
-    - netcdf4
     - pyshp
     - pyyaml
+    - richdem
     - scipy
     - statsmodels
     - xarray
