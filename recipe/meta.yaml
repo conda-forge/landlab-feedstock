@@ -34,9 +34,9 @@ requirements:
     - xarray
 
 test:
-  requires:
-    - pytest
-    - pytest-datadir
+  # requires:
+  #   - pytest
+  #   - pytest-datadir
   imports:
     - landlab
   commands:
