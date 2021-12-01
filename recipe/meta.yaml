@@ -1,4 +1,4 @@
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: landlab
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
-  sha256: 7f2ef5adcd720e5d40a602588cc053a819b503ac325d692ed6214a7574e86798
+  sha256: 16450a2f4cf286150ca8bb143730845ad87095d89eef8baed7d84100bcea09c7
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [py2k]
 
@@ -26,17 +26,17 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - bmipy
     - matplotlib-base
-    - netcdf4
     - pyshp
     - pyyaml
+    - richdem
     - scipy
     - statsmodels
     - xarray
 
 test:
-  requires:
-    - pytest
-    - pytest-datadir
+  # requires:
+  #   - pytest
+  #   - pytest-datadir
   imports:
     - landlab
   commands:
