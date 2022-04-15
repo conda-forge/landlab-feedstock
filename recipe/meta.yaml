@@ -17,12 +17,12 @@ requirements:
   build:
     - {{ compiler("c") }}
   host:
-    - python
+    - python >= 3.8
     - pip
     - cython
     - numpy
   run:
-    - python
+    - python >= 3.8
     - {{ pin_compatible('numpy') }}
     - bmipy
     - matplotlib-base
