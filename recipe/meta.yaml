@@ -17,18 +17,17 @@ requirements:
   build:
     - {{ compiler("c") }}
   host:
-    - python >=3.8
+    - python
     - pip
     - cython
     - numpy
   run:
-    - python >=3.8
+    - python
     - {{ pin_compatible('numpy') }}
     - bmipy
     - matplotlib-base
     - pyshp
     - pyyaml
-    - richdem
     - scipy
     - statsmodels
     - xarray
