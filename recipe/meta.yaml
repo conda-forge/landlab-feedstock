@@ -28,7 +28,7 @@ requirements:
     - matplotlib-base
     - pyshp
     - pyyaml
-    - richdem
+    - richdem >=2.3
     - setuptools
     - scipy
     - statsmodels
