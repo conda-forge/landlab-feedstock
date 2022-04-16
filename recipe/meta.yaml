@@ -28,6 +28,7 @@ requirements:
     - matplotlib-base
     - pyshp
     - pyyaml
+    - setuptools
     - scipy
     - statsmodels
     - xarray
