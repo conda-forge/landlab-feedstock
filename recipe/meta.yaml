@@ -9,7 +9,7 @@ source:
   sha256: 9dade74cccb1670ba6e9d6d9f4878d3bacef7991a626e4f3f2fa3a5fcbc01042
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [py2k]
 
@@ -28,6 +28,7 @@ requirements:
     - matplotlib-base
     - pyshp
     - pyyaml
+    - richdem
     - setuptools
     - scipy
     - statsmodels
