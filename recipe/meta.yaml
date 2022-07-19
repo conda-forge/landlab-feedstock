@@ -9,7 +9,7 @@ source:
   sha256: 9dade74cccb1670ba6e9d6d9f4878d3bacef7991a626e4f3f2fa3a5fcbc01042
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [py2k]
 
@@ -30,6 +30,7 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - bmipy
     - matplotlib-base
+    - netcdf4
     - pyshp
     - pyyaml
     - richdem >=2.3
@@ -39,12 +40,14 @@ requirements:
     - xarray
 
 test:
-  # requires:
+  requires:
+  - pip
   #   - pytest
   #   - pytest-datadir
   imports:
     - landlab
   commands:
+    - pip check
     - export MPLBACKEND=Agg  # [not win]
     # skipping the tests b/c they have some flaky repr comparisons
     # - pytest --pyargs landlab --doctest-modules -o doctest_optionflags="NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL ALLOW_UNICODE"
