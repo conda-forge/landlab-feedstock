@@ -1,0 +1,13 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index 01a3034c5..b8fcbc2ab 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -113,6 +113,8 @@ landlab = [
+ ]
+ [tool.setuptools.packages.find]
+ where = ["."]
++include = ["landlab*"]
++exclude = ["tests*"]
+ 
+ [tool.setuptools.dynamic]
+ readme = {file = ["README.rst", "AUTHORS.rst", "CHANGES.rst"]}
