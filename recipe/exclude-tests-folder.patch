@@ -7,7 +7,6 @@ index 01a3034c5..b8fcbc2ab 100644
  [tool.setuptools.packages.find]
  where = ["."]
 +include = ["landlab*"]
-+exclude = ["tests*"]
  
  [tool.setuptools.dynamic]
  readme = {file = ["README.rst", "AUTHORS.rst", "CHANGES.rst"]}
