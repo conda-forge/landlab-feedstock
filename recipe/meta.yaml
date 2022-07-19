@@ -11,7 +11,7 @@ source:
     - exclude-tests-folder.patch  # prevent tests folder from being installed
 
 build:
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [py2k]
 
