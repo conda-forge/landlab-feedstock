@@ -1,4 +1,4 @@
-{% set version = "2.5.0" %}
+{% set version = "2.6.0" %}
 
 package:
   name: landlab
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
-  sha256: 9dade74cccb1670ba6e9d6d9f4878d3bacef7991a626e4f3f2fa3a5fcbc01042
+  sha256: d084ead19907f1d546da86aefab20e40fd3d65add3f442cbd55519b87e1fd2d8
   patches:
-    - exclude-tests-folder.patch  # prevent tests folder from being installed
+    - python-requires-3.8.patch  # set python requires >= 3.8
 
 build:
-  number: 4
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [py2k]
 
@@ -22,6 +22,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler("c") }}
+    - {{ compiler("cxx") }}
   host:
     - python
     - pip
@@ -33,17 +34,19 @@ requirements:
     - bmipy
     - matplotlib-base
     - netcdf4
+    - pandas
     - pyshp
     - pyyaml
+    - rich-click
     - richdem >=2.3
     - setuptools
     - scipy
     - statsmodels
-    - xarray
+    - xarray >=0.16
 
 test:
   requires:
-  - pip
+    - pip
   #   - pytest
   #   - pytest-datadir
   imports:
@@ -58,7 +61,7 @@ about:
   home: http://landlab.github.io
   license: MIT
   license_family: MIT
-  license_file: LICENSE.txt
+  license_file: LICENSE.rst
   summary: A python toolkit for modeling earth surface processes
   description: |
     Landlab creates an environment in which scientists can build
@@ -80,5 +83,3 @@ extra:
     - mcflugen
     - lsetiawan
     - ocefpaf
-    - kbarnhart
-    - nathanlyons
