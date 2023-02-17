@@ -7,6 +7,8 @@ package:
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
   sha256: d084ead19907f1d546da86aefab20e40fd3d65add3f442cbd55519b87e1fd2d8
+  patches:
+    - python-requires-3.8.patch  # set python requires >= 3.8
 
 build:
   number: 0
