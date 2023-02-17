@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
   sha256: d084ead19907f1d546da86aefab20e40fd3d65add3f442cbd55519b87e1fd2d8
-  patches:
-    - exclude-tests-folder.patch  # prevent tests folder from being installed
 
 build:
   number: 0
@@ -33,13 +31,15 @@ requirements:
     - bmipy
     - matplotlib-base
     - netcdf4
+    - pandas
     - pyshp
     - pyyaml
+    - rich-click
     - richdem >=2.3
     - setuptools
     - scipy
     - statsmodels
-    - xarray
+    - xarray >=0.16
 
 test:
   requires:
