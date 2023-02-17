@@ -61,7 +61,7 @@ about:
   home: http://landlab.github.io
   license: MIT
   license_family: MIT
-  license_file: LICENSE.txt
+  license_file: LICENSE.rst
   summary: A python toolkit for modeling earth surface processes
   description: |
     Landlab creates an environment in which scientists can build
@@ -83,5 +83,3 @@ extra:
     - mcflugen
     - lsetiawan
     - ocefpaf
-    - kbarnhart
-    - nathanlyons
