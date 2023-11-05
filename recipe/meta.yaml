@@ -13,7 +13,7 @@ build:
   script:
     - {{ PYTHON }} -m pip install . --no-deps -vv
     - {{ PYTHON }} -c "import pathlib, site, shutil; shutil.rmtree(pathlib.Path(site.getsitepackages()[0]) / 'tests', ignore_errors=True)"
-  skip: true  # [py<39]
+  skip: true  # [py<310]
 
 requirements:
   build:
