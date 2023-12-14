@@ -61,7 +61,7 @@ test:
     # - pytest --pyargs landlab --doctest-modules -o doctest_optionflags="NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL ALLOW_UNICODE"
 
 about:
-  home: http://landlab.github.io
+  home: https://landlab.github.io
   license: MIT
   license_family: MIT
   license_file: LICENSE.rst

@@ -3,7 +3,7 @@ About landlab-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/landlab-feedstock/blob/main/LICENSE.txt)
 
-Home: http://landlab.github.io
+Home: https://landlab.github.io
 
 Package license: MIT
 
