@@ -5,8 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
-  sha256: 2b4eb0fdbde08fcb749bf3c24a43267ce4d057b2b5e29e94e5225969e9a6f1d6
+  url: https://pypi.io/packages/source/l/landlab/landlab-{{ version }}.tar.gz
+  sha256: 68e2eb5d1a67c5ef9e2ef0ece129869254091f1d2462b1ac0228e4cff9d262f0
 
 build:
   number: 1
