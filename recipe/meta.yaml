@@ -14,6 +14,9 @@ build:
     - {{ PYTHON }} -m pip install . --no-deps -vv
     - {{ PYTHON }} -c "import pathlib, site, shutil; shutil.rmtree(pathlib.Path(site.getsitepackages()[0]) / 'tests', ignore_errors=True)"
   skip: true  # [py<310]
+  entry_points:
+    - landlab = landlab.cmd.landlab:landlab
+
 
 requirements:
   build:
@@ -55,12 +58,13 @@ test:
     - landlab
   commands:
     - pip check
+    - landlab --help
     - export MPLBACKEND=Agg  # [not win]
     # skipping the tests b/c they have some flaky repr comparisons
     # - pytest --pyargs landlab --doctest-modules -o doctest_optionflags="NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL ALLOW_UNICODE"
 
 about:
-  home: http://landlab.github.io
+  home: https://landlab.github.io
   license: MIT
   license_family: MIT
   license_file: LICENSE.rst
