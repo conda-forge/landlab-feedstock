@@ -1,4 +1,4 @@
-{% set version = "2.7.0" %}
+{% set version = "2.8.0" %}
 
 package:
   name: landlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
-  sha256: 2b4eb0fdbde08fcb749bf3c24a43267ce4d057b2b5e29e94e5225969e9a6f1d6
+  sha256: cd9028ba6f27184d2608015a2f3c19eac8e8a6dab684ddec14460881cb5fe6b2
 
 build:
   number: 0
@@ -14,14 +14,18 @@ build:
     - {{ PYTHON }} -m pip install . --no-deps -vv
     - {{ PYTHON }} -c "import pathlib, site, shutil; shutil.rmtree(pathlib.Path(site.getsitepackages()[0]) / 'tests', ignore_errors=True)"
   skip: true  # [py<310]
+  entry_points:
+    - landlab = landlab.cmd.landlab:landlab
+
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython <3                               # [build_platform != target_platform]
+    - cython <3                              # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler("c") }}
+    - {{ stdlib("c") }}
     - {{ compiler("cxx") }}
   host:
     - python
@@ -31,6 +35,7 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
+    - importlib-resources  # [py<312]
     - bmipy
     - matplotlib-base
     - netcdf4
@@ -53,12 +58,13 @@ test:
     - landlab
   commands:
     - pip check
+    - landlab --help
     - export MPLBACKEND=Agg  # [not win]
     # skipping the tests b/c they have some flaky repr comparisons
     # - pytest --pyargs landlab --doctest-modules -o doctest_optionflags="NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL ALLOW_UNICODE"
 
 about:
-  home: http://landlab.github.io
+  home: https://landlab.github.io
   license: MIT
   license_family: MIT
   license_file: LICENSE.rst
