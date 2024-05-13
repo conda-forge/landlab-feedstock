@@ -1,4 +1,4 @@
-{% set version = "2.7.0" %}
+{% set version = "2.8.0" %}
 
 package:
   name: landlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
-  sha256: 2b4eb0fdbde08fcb749bf3c24a43267ce4d057b2b5e29e94e5225969e9a6f1d6
+  sha256: cd9028ba6f27184d2608015a2f3c19eac8e8a6dab684ddec14460881cb5fe6b2
 
 build:
   number: 0
@@ -22,6 +22,7 @@ requirements:
     - cython <3                               # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler("c") }}
+    - {{ stdlib("c") }}
     - {{ compiler("cxx") }}
   host:
     - python
