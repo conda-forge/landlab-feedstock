@@ -9,7 +9,7 @@ source:
   sha256: cd9028ba6f27184d2608015a2f3c19eac8e8a6dab684ddec14460881cb5fe6b2
 
 build:
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} -m pip install . --no-deps -vv
     - {{ PYTHON }} -c "import pathlib, site, shutil; shutil.rmtree(pathlib.Path(site.getsitepackages()[0]) / 'tests', ignore_errors=True)"
@@ -34,7 +34,6 @@ requirements:
     - numpy
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - importlib-resources  # [py<312]
     - bmipy
     - matplotlib-base
