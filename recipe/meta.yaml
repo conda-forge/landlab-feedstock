@@ -32,6 +32,7 @@ requirements:
     - pip
     - cython <3
     - numpy
+    - setuptools
   run:
     - python
     - {{ pin_compatible('numpy') }}
