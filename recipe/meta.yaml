@@ -1,4 +1,4 @@
-{% set version = "2.9.0" %}
+{% set version = "2.9.1" %}
 
 package:
   name: landlab
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
-  sha256: 76f454d43acf9a80edea3427d8966eef6c263477d78c0fa2a504799cc73a798b
+  sha256: 35896d33a8315c3ef693bebf5f8dbc731b5ad41172da714b636c1a941fc9cde1
 
 build:
-  number: 1
+  number: 0
   script:
     - {{ PYTHON }} -m pip install . --no-deps -vv
     - {{ PYTHON }} -c "import pathlib, site, shutil; shutil.rmtree(pathlib.Path(site.getsitepackages()[0]) / 'tests', ignore_errors=True)"
