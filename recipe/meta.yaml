@@ -1,4 +1,4 @@
-{% set version = "2.9.1" %}
+{% set version = "2.9.2" %}
 
 package:
   name: landlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/landlab/landlab/archive/v{{ version }}.tar.gz
-  sha256: 35896d33a8315c3ef693bebf5f8dbc731b5ad41172da714b636c1a941fc9cde1
+  sha256: a140ed3236049441cb2d3a3c7d89cc58802565697581594bd0f4b31286f83c15
 
 build:
   number: 0
