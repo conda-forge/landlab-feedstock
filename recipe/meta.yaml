@@ -9,7 +9,7 @@ source:
   sha256: e6d14dbb9f06b4591895fbadce89cb8743c3e6e45b77190e4f077bb9ef42989e
 
 build:
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} -m pip install . --no-deps -vv
     - {{ PYTHON }} -c "import pathlib, site, shutil; shutil.rmtree(pathlib.Path(site.getsitepackages()[0]) / 'tests', ignore_errors=True)"
