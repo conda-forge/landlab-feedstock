@@ -3,15 +3,13 @@ About landlab-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/landlab-feedstock/blob/main/LICENSE.txt)
 
-Home: https://landlab.github.io
+Home: https://pypi.org/project/landlab/
 
 Package license: MIT
 
-Summary: A python toolkit for modeling earth surface processes
+Summary: Open-source Python package for numerical modeling of Earth surface dynamics.
 
-Development: https://github.com/landlab/landlab
-
-Documentation: https://landlab.readthedocs.io
+Documentation: https://pythonhosted.org/landlab/
 
 Landlab creates an environment in which scientists can build
 a numerical landscape model without having to code all of the
@@ -24,7 +22,6 @@ who want to use a landscape model often build their own unique
 model from the ground up, re-coding the basic building blocks
 of their landscape model rather than taking advantage of codes
 that have already been written.
-
 
 Current build status
 ====================
