@@ -1,0 +1,94 @@
+schema_version: 1
+
+context:
+  version: "2.11.0"
+
+package:
+  name: landlab
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/l/landlab/landlab-${{ version }}.tar.gz
+  sha256: 147443e5f763c0f30d0a749aee078a95755d639cd9f1da5ef1e13bc4bd0334c4
+
+build:
+  number: 0
+  skip: match(python, "<3.11")
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    - ${{ PYTHON }} -c "import pathlib, site, shutil; shutil.rmtree(pathlib.Path(site.getsitepackages()[0]) / 'tests', ignore_errors=True)"
+  python:
+    entry_points:
+      - landlab = landlab.cmd.landlab:landlab
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then:
+      - python
+      - cross-python_${{ target_platform }}
+      - cython >=3
+      - numpy >=2.0,<3
+    - ${{ stdlib('c') }}
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+  host:
+    - python
+    - cython >=3
+    - numpy >=2.0,<3
+    - setuptools
+    - pip
+  run:
+    - python
+    - bmipy
+    - if: match(python, "<3.12")
+      then: importlib-resources
+    - matplotlib-base
+    - netcdf4
+    - py-richdem
+    - pyyaml
+    - pyshp !=2.3.0
+    - requireit
+    - rich-click
+    - scipy
+    - statsmodels
+    - pandas
+    - xarray >=0.16
+    - numpy >=2.0,<3
+
+tests:
+  - python:
+      imports:
+        - landlab
+      pip_check: true
+  - requirements:
+      run:
+        - pip
+        - python
+    script:
+      - landlab --help
+
+about:
+  summary: Open-source Python package for numerical modeling of Earth surface dynamics.
+  description: |
+    Landlab creates an environment in which scientists can build
+    a numerical landscape model without having to code all of the
+    individual components. Landscape models compute flows of mass,
+    such as water, sediment, glacial ice, volcanic material, or
+    landslide debris, across a gridded terrain surface. Landscape
+    models have a number of commonalities, such as operating on a
+    grid of points and routing material across the grid. Scientists
+    who want to use a landscape model often build their own unique
+    model from the ground up, re-coding the basic building blocks
+    of their landscape model rather than taking advantage of codes
+    that have already been written.
+  license: MIT
+  license_file: LICENSE.md
+  homepage: https://pypi.org/project/landlab/
+  documentation: https://pythonhosted.org/landlab/
+
+extra:
+  recipe-maintainers:
+    - mcflugen
+    - lsetiawan
+    - ocefpaf
